@@ -5,10 +5,12 @@ export const sequelize = new Sequelize("flixxo", "admin", "admin", {
   dialect: "postgres",
 });
 
+import "../criptos/infrastructure/outbound/cripto-model"
+import "../prices/infrastructure/outbound/price-model"
+
 export const testConnect = async () => {
   try {
-    await sequelize.authenticate();
-    console.log("Connection to database has been established successfully");
+    await sequelize.sync({ force: true });
   } catch (error) {
     console.error("Unable to connect to the database");
   }

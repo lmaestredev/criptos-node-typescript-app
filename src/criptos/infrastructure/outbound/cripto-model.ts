@@ -14,4 +14,6 @@ export const Cripto = sequelize.define("criptos", {
   current_price: {
     type: DataTypes.DECIMAL,
   },
+}, {
+  timestamps: true
 });
