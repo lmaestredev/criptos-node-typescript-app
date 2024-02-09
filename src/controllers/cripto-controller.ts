@@ -1,6 +1,6 @@
 // import { Request, Response } from 'express';
-// import { User, UserNotFound } from './user.model'; // Adjust path based on your file structure
-// import { UserByIdFinder } from './user-finder.service'; // Adjust path based on your file structure
+// // import { User, UserNotFound } from './user.model'; // Adjust path based on your file structure
+// // import { UserByIdFinder } from './user-finder.service'; // Adjust path based on your file structure
 
 // interface UserGetControllerDependencies {
 //   userByIdFinder: UserByIdFinder;

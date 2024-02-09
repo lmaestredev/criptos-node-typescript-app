@@ -1,11 +1,12 @@
 import { DataTypes, Model } from "sequelize";
-import { sequelize } from "../../../common/sequelize-connection";
-import { Price } from "../../../prices/infrastructure/outbound/price-model";
+
+import { sequelize } from "../sequelize-connection";
+import { Price } from "./price-model";
 
 export class Cripto extends Model {
   declare id: number;
   declare currentPrice: number;
-  declare previousPrice: Number;
+  declare previousPrice: number;
 }
 
 Cripto.init(
@@ -17,7 +18,7 @@ Cripto.init(
     },
     name: {
       type: new DataTypes.STRING(128),
-      allowNull: false
+      allowNull: false,
     },
     currentPrice: {
       type: DataTypes.DECIMAL,
@@ -28,17 +29,16 @@ Cripto.init(
   },
   {
     timestamps: false,
-    tableName: 'criptos',
-    sequelize
+    tableName: "criptos",
+    sequelize,
   }
 );
 
 Cripto.hasMany(Price, {
   foreignKey: "criptoId",
   sourceKey: "id",
-})
+});
 
 Price.belongsTo(Cripto, {
   foreignKey: "criptoId",
-})
-
+});

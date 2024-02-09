@@ -1,5 +1,5 @@
-import { Cripto } from "../domain/cripto";
-import { CriptoRepository } from "../domain/cripto-repository";
+import { Cripto } from "../criptos/domain/cripto";
+import { CriptoRepository } from "../criptos/domain/cripto-repository";
 
 export class CreateCriptoUseCase {
   constructor(private readonly CriptoRepository: CriptoRepository) {}

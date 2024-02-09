@@ -1,5 +1,5 @@
-import { User } from "../../domain/user";
-import { UserRepository } from "../../domain/user-repository";
+import { User } from "../../models/user";
+import { UserRepository } from "../../repositories/user-repository";
 import userDatabase from "./user-database.json";
 
 export class MySQLUserRepository implements UserRepository {

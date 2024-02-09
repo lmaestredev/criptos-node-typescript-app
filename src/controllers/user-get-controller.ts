@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 
-import { UserByIdFinder } from "../../application/user-by-id-finder";
-import { UserNotFound } from "../../domain/user-not-found";
+import { UserByIdFinder } from "../service/user-by-id-finder";
+import { UserNotFound } from "../utils/user-not-found";
 
 export class UserGetController {
   constructor(private readonly userByIdFinder: UserByIdFinder) {}

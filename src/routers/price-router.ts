@@ -2,11 +2,11 @@ import express from "express";
 
 // import { HealthController } from "./health-controller";
 
-const criptoRouter = express.Router();
+const priceRouter = express.Router();
 
 // const healthController = new HealthController();
 
-criptoRouter.get("/",);
-criptoRouter.post("/",);
+priceRouter.get("/");
+priceRouter.post("/");
 
-export { criptoRouter };
+export { priceRouter };

@@ -1,5 +1,6 @@
 import { DataTypes, Model } from "sequelize";
-import { sequelize } from "../../../common/sequelize-connection";
+
+import { sequelize } from "../sequelize-connection";
 // import { Cripto } from "../../../criptos/infrastructure/outbound/cripto-model"
 
 export class Price extends Model {
@@ -19,12 +20,12 @@ Price.init(
       type: DataTypes.DECIMAL,
     },
     createdAt: {
-      type: DataTypes.DATE
-    }
+      type: DataTypes.DATE,
+    },
   },
   {
     timestamps: false,
-    tableName: 'prices',
-    sequelize
+    tableName: "prices",
+    sequelize,
   }
 );

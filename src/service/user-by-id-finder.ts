@@ -1,6 +1,6 @@
-import { User } from "../domain/user";
-import { UserNotFound } from "../domain/user-not-found";
-import { UserRepository } from "../domain/user-repository";
+import { User } from "../models/user";
+import { UserRepository } from "../repositories/user-repository";
+import { UserNotFound } from "../utils/user-not-found";
 
 export class UserByIdFinder {
   constructor(private readonly userRepository: UserRepository) {}
