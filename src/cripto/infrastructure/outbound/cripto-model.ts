@@ -1,7 +1,7 @@
 import { DataTypes, Model } from "sequelize";
 
-import { sequelize } from "../sequelize-connection";
-import { Price } from "./price-model";
+import { sequelize } from "../../../connections/sequelize-connection";
+import { Price } from "../../../price/infrastructure/outbound/price-model";
 
 export class CriptoModel extends Model {
   declare id: number;

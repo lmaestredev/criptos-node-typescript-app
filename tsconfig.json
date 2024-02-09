@@ -16,7 +16,7 @@
   "include": [
     "src/**/**.ts",
     "tests/**/**.ts",
-    "playground/**/**.ts", "src/prices/infrastructure/outbound/price-model.ts", "src/connections/sequelize-models/cripto-model.ts", "src/common/sequelize-connection.js",
+    "playground/**/**.ts", "src/prices/infrastructure/outbound/price-model.ts", "src/cripto/infrastructure/outbound/cripto-model.ts", "src/common/sequelize-connection.js",
   ],
   "exclude": ["node_modules"]
 }

@@ -2,11 +2,11 @@ import bodyParser from "body-parser";
 import { config as dotEnvConfig } from "dotenv";
 import express, { Application } from "express";
 
-import { config } from "../config/config";
-import { connect } from "../connections/sequelize-connection";
-import { criptoRouter } from "../routers/cripto-router";
-import { healthRouter } from "../routers/health-router";
-import { priceRouter } from "../routers/price-router";
+import { config } from "./config/config";
+import { connect } from "./connections/sequelize-connection";
+import { criptoRouter } from "./cripto/infrastructure/inbound/routers/cripto-router";
+import { healthRouter } from "./health/health-router";
+import { priceRouter } from "./price/infrastructure/inbound/routers/price-router";
 
 dotEnvConfig();
 const { port } = config.server;

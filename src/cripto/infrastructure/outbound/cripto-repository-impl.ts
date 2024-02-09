@@ -1,6 +1,6 @@
-import { CriptoModel } from "../../connections/sequelize-models/cripto-model";
-import { Cripto } from "../../entities/cripto";
-import { CriptoRepository } from "../cripto-repository";
+import { Cripto } from "../../domain/cripto";
+import { CriptoRepository } from "../../domain/cripto-repository";
+import { CriptoModel } from "./cripto-model";
 
 export class CriptoRepositoryImpl implements CriptoRepository {
   create(cripto: Cripto): Promise<Cripto> {
