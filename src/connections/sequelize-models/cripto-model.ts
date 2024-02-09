@@ -3,13 +3,14 @@ import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../sequelize-connection";
 import { Price } from "./price-model";
 
-export class Cripto extends Model {
+export class CriptoModel extends Model {
   declare id: number;
+  declare name: string;
   declare currentPrice: number;
   declare previousPrice: number;
 }
 
-Cripto.init(
+CriptoModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -34,11 +35,11 @@ Cripto.init(
   }
 );
 
-Cripto.hasMany(Price, {
+CriptoModel.hasMany(Price, {
   foreignKey: "criptoId",
   sourceKey: "id",
 });
 
-Price.belongsTo(Cripto, {
+Price.belongsTo(CriptoModel, {
   foreignKey: "criptoId",
 });

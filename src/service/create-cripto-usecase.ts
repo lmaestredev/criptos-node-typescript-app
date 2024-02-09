@@ -1,11 +1,16 @@
-import { Cripto } from "../criptos/domain/cripto";
-import { CriptoRepository } from "../criptos/domain/cripto-repository";
+// import { Sequelize } from 'sequelize'; // Example, adjust your ORM accordingly
 
-export class CreateCriptoUseCase {
-  constructor(private readonly CriptoRepository: CriptoRepository) {}
+// class CriptoRepositoryImpl implements CriptoRepository {
+//   private sequelize: Sequelize;
 
-  async run(cripto: Cripto): Promise<Cripto> {
-    const Cripto = await this.CriptoRepository.create(cripto);
-    return Cripto;
-  }
-}
+//   constructor(sequelize: Sequelize) {
+//     this.sequelize = sequelize;
+//   }
+
+//   // Implement methods using Sequelize or your ORM's methods
+//   create(product: Product): Promise<Product> {
+//     // ... (Implementation using create method on your product model)
+//   }
+
+//   // ... other methods
+// }

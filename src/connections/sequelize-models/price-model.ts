@@ -6,6 +6,7 @@ import { sequelize } from "../sequelize-connection";
 export class Price extends Model {
   declare id: number;
   declare price: number;
+  declare criptoId: number;
   declare createdAt: Date;
 }
 

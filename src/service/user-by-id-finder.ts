@@ -1,4 +1,4 @@
-import { User } from "../models/user";
+import { User } from "../entities/user";
 import { UserRepository } from "../repositories/user-repository";
 import { UserNotFound } from "../utils/user-not-found";
 
