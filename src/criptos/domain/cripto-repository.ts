@@ -1,4 +1,4 @@
-import { Cripto } from "../model/Cripto";
+import { Cripto } from "./cripto";
 
 export interface CriptoRepository {
   getById(id: string): Promise<Cripto | null>;

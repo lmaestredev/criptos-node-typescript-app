@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 
-import { sequelize } from "../../../../common/SequelizeConnection";
+import { sequelize } from "../../../common/sequelize-connection";
 
 export const Cripto = sequelize.define("criptos", {
   id: {
