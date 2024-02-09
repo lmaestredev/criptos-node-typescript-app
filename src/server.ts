@@ -4,6 +4,7 @@ import { config as dotEnvConfig } from "dotenv";
 import express, { Application } from "express";
 import { config } from "./common/config";
 import { healthRouter } from "./health/health-router";
+import { criptoRouter } from "./criptos/infrastructure/inbound/cripto-router";
 
 dotEnvConfig();
 const { port } = config.server;
@@ -27,7 +28,7 @@ export class Server {
     // Middlewares
     this.app.use(bodyParser.json());
     // Rutas de mi aplicación
-    // this.app.use("/v1/flixxo-app/cripto", require("../criptos/infrastructure/inbound/CriptoRouter"));
+    this.app.use("/v1/flixxo-app/cripto", criptoRouter);
     this.app.use("/api/v1/flixxo-app/health", healthRouter);
 
     await this.app.listen(this.port, async () => {

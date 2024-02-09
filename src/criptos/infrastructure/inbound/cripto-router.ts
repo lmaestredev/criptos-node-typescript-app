@@ -1,9 +1,12 @@
-// import express from "express";
+import express from "express";
 
-// import { userGetController } from "../dependencies";
+// import { HealthController } from "./health-controller";
 
-// const userRouter = express.Router();
+const criptoRouter = express.Router();
 
-// userRouter.get("/:id", userGetController.run.bind(userGetController));
+// const healthController = new HealthController();
 
-// export { userRouter };
+criptoRouter.get("/",);
+criptoRouter.post("/",);
+
+export { criptoRouter };
