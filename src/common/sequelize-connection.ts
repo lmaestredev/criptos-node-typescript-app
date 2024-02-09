@@ -8,7 +8,7 @@ export const sequelize = new Sequelize("flixxo", "admin", "admin", {
 import "../criptos/infrastructure/outbound/cripto-model"
 import "../prices/infrastructure/outbound/price-model"
 
-export const testConnect = async () => {
+export const connect = async () => {
   try {
     await sequelize.sync({ force: true });
   } catch (error) {

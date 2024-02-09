@@ -1,16 +1,30 @@
-import { DataTypes } from "sequelize";
-
+import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../../../common/sequelize-connection";
+// import { Cripto } from "../../../criptos/infrastructure/outbound/cripto-model"
 
-export const Price = sequelize.define("prices", {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true,
+export class Price extends Model {
+  declare id: number;
+  declare price: number;
+  declare createdAt: Date;
+}
+
+Price.init(
+  {
+    id: {
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      autoIncrement: true,
+    },
+    price: {
+      type: DataTypes.DECIMAL,
+    },
+    createdAt: {
+      type: DataTypes.DATE
+    }
   },
-  price: {
-    type: DataTypes.DECIMAL,
-  },
-}, {
-    timestamps: true
-});
+  {
+    timestamps: false,
+    tableName: 'prices',
+    sequelize
+  }
+);

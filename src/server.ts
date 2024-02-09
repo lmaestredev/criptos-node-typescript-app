@@ -1,9 +1,8 @@
+import { connect } from "./common/sequelize-connection";
 import bodyParser from "body-parser";
 import { config as dotEnvConfig } from "dotenv";
 import express, { Application } from "express";
-
 import { config } from "./common/config";
-import { testConnect } from "./common/sequelize-connection";
 import { healthRouter } from "./health/health-router";
 
 dotEnvConfig();
@@ -19,7 +18,7 @@ export class Server {
   }
 
   async dbConnection(): Promise<void> {
-    await testConnect();
+    await connect();
   }
 
   async start(): Promise<void> {
