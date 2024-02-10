@@ -28,7 +28,7 @@ export class Server {
 
     // Middlewares
     // this.app.use(bodyParser.json());
-    this.app.use(express.json())
+    this.app.use(express.json());
 
     // Rutas de mi aplicación
     this.app.use("/api/v1/flixxo-app/health", healthRouter);

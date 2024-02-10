@@ -5,4 +5,6 @@ import { CriptoRepositoryImpl } from "./outbound/cripto-repository-impl";
 const criptoRepository = new CriptoRepositoryImpl();
 const createCriptoUseCase = new CreateCriptoUseCase(criptoRepository);
 
-export const criptoPostController = new CriptoPostController(createCriptoUseCase);
+export const criptoPostController = new CriptoPostController(
+  createCriptoUseCase
+);

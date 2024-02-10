@@ -4,14 +4,13 @@ import { CriptoModel } from "./cripto-model";
 
 export class CriptoRepositoryImpl implements CriptoRepository {
   async create(cripto: Cripto): Promise<void> {
-
-     // await PriceModel.create({
-      //   price: price.price,
-      //   criptoId: price.criptoId,
-      // });
+    // await PriceModel.create({
+    //   price: price.price,
+    //   criptoId: price.criptoId,
+    // });
     await CriptoModel.create({
       name: cripto.name,
-      currentPrice: cripto.currentPrice
+      currentPrice: cripto.currentPrice,
     });
   }
 

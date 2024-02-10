@@ -1,4 +1,4 @@
 export interface CreateCriptoDto {
-    name: string;
-    currentPrice: number;
-  }
+  name: string;
+  currentPrice: number;
+}
