@@ -1,13 +1,13 @@
 import { DataTypes, Model } from "sequelize";
 
 import { sequelize } from "../../../connections/sequelize-connection";
-import { Price } from "../../../price/infrastructure/outbound/price-model";
+import { PriceModel } from "../../../price/infrastructure/outbound/price-model";
 
 export class CriptoModel extends Model {
-  declare id: number;
   declare name: string;
   declare currentPrice: number;
-  declare previousPrice: number;
+  declare previousPrice?: number;
+  declare id?: number;
 }
 
 CriptoModel.init(
@@ -26,6 +26,7 @@ CriptoModel.init(
     },
     previousPrice: {
       type: DataTypes.DECIMAL,
+      allowNull: true,
     },
   },
   {
@@ -35,11 +36,11 @@ CriptoModel.init(
   }
 );
 
-CriptoModel.hasMany(Price, {
+CriptoModel.hasMany(PriceModel, {
   foreignKey: "criptoId",
   sourceKey: "id",
 });
 
-Price.belongsTo(CriptoModel, {
+PriceModel.belongsTo(CriptoModel, {
   foreignKey: "criptoId",
 });

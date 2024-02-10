@@ -1,12 +1,8 @@
 import express from "express";
-
-// import { HealthController } from "./health-controller";
+import { criptoPostController } from "../../dependencies";
 
 const criptoRouter = express.Router();
 
-// const healthController = new HealthController();
-
-criptoRouter.get("/");
-criptoRouter.post("/");
+criptoRouter.post("/", criptoPostController.run.bind(criptoPostController));
 
 export { criptoRouter };

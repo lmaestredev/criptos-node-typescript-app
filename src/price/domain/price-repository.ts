@@ -1,6 +1,6 @@
-import { Price } from "../infrastructure/outbound/price-model";
+import { Price } from "./price";
 
-export interface UserRepository {
-  getById(id: string): Promise<Price | null>;
-  create(price: Price): Promise<Price>;
+export interface PriceRepository {
+  // getById(id: string): Promise<Price | null>;
+  create(price: Price): Promise<void>;
 }

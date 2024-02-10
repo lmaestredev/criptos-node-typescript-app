@@ -3,14 +3,14 @@ import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../../../connections/sequelize-connection";
 // import { Cripto } from "../../../criptos/infrastructure/outbound/cripto-model"
 
-export class Price extends Model {
+export class PriceModel extends Model {
   declare id: number;
   declare price: number;
   declare criptoId: number;
   declare createdAt: Date;
 }
 
-Price.init(
+PriceModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -25,7 +25,7 @@ Price.init(
     },
   },
   {
-    timestamps: false,
+    // timestamps: false,
     tableName: "prices",
     sequelize,
   }
