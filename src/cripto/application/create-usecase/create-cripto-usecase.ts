@@ -1,4 +1,4 @@
-import { CreatePriceUseCase } from "../../../price/application/create-price-usecase";
+import { CreatePriceUseCase } from "../../../price/application/create-usecase/create-price-usecase";
 import { Cripto } from "../../domain/cripto";
 import { CriptoRepository } from "../../domain/cripto-repository";
 import { CreateCriptoDto } from "./create-cripto-dto";

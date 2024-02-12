@@ -1,4 +1,4 @@
-import { CreatePriceUseCase } from "../../price/application/create-price-usecase";
+import { CreatePriceUseCase } from "../../price/application/create-usecase/create-price-usecase";
 import { PriceRepositoryImpl } from "../../price/infrastructure/outbound/price-repository-impl";
 import { CreateCriptoUseCase } from "../application/create-usecase/create-cripto-usecase";
 import { GetAllCriptosUseCase } from "../application/get-usecase/get-all-criptos-usecase";

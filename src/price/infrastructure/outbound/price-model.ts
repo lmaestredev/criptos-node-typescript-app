@@ -8,6 +8,13 @@ export class PriceModel extends Model {
   declare price: number;
   declare criptoId: number;
   declare createdAt: Date;
+
+  static async getPricesByCriptoId(criptoId: number): Promise<PriceModel[]> {
+    const prices = await PriceModel.findAll({
+      where: { criptoId: criptoId },
+    });
+    return prices;
+  }
 }
 
 PriceModel.init(

@@ -1,5 +1,5 @@
-import { Price } from "../domain/price";
-import { PriceRepository } from "../domain/price-repository";
+import { Price } from "../../domain/price";
+import { PriceRepository } from "../../domain/price-repository";
 import { CreatePriceDto } from "./create-price-dto";
 
 export class CreatePriceUseCase {

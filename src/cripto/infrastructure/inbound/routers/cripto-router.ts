@@ -16,6 +16,9 @@ criptoRouter.put(
   "/update/:name",
   criptoPutController.run.bind(criptoPutController)
 );
-criptoRouter.get("/get-all", criptoGetController.getAll.bind(criptoGetController));
+criptoRouter.get(
+  "/get-all",
+  criptoGetController.getAll.bind(criptoGetController)
+);
 
 export { criptoRouter };

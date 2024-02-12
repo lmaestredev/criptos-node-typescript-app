@@ -5,4 +5,5 @@ export interface CriptoRepository {
   getByName(name: string): Promise<Cripto | null>;
   update(cripto: Cripto): Promise<Cripto | null>;
   getAll(): Promise<Cripto[]>;
+  getById(id: number): Promise<Cripto | null>;
 }

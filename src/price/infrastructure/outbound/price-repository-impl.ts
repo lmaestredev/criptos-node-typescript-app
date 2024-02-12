@@ -9,4 +9,9 @@ export class PriceRepositoryImpl implements PriceRepository {
       criptoId: price.criptoId,
     });
   }
+
+  async getPricesByCriptoId(id: number): Promise<Price[]> {
+    const prices = await PriceModel.getPricesByCriptoId(id);
+    return prices;
+  }
 }

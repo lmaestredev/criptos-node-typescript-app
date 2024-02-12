@@ -58,4 +58,9 @@ export class CriptoRepositoryImpl implements CriptoRepository {
 
     return criptos;
   }
+
+  async getById(id: number): Promise<Cripto | null> {
+    const cripto = await CriptoModel.findByPk(id);
+    return cripto;
+  }
 }
