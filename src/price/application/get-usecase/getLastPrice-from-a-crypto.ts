@@ -2,7 +2,7 @@ import { GetCryptoByIdUseCase } from "../../../crypto/application/get-usecase/ge
 import { Price } from "../../domain/price";
 import { PriceRepository } from "../../domain/price-repository";
 
-export class GetLastPriceFromCryptoUseCase {
+export class GetLastPriceFromACryptoUseCase {
   constructor(
     private readonly priceRepository: PriceRepository,
     private readonly getCryptoByIdUseCase: GetCryptoByIdUseCase
@@ -10,20 +10,22 @@ export class GetLastPriceFromCryptoUseCase {
 
   errorMessage = "Last price not founded";
   successMessage = "Last price returned successfully";
-  run(cryptoId: number): Promise<Price[]> {
+  run(cryptoId: number): Promise<Price> {
     return new Promise(async (resolve, reject) => {
       try {
         console.log(
-          "--------------- Starting to getting crypto prices ---------------"
+          "--------------- Starting to getting last price from a crypto ---------------"
         );
-        console.log("--------------- Verifying crypto's name ---------------");
+        console.log("--------------- Verifying crypto's id ---------------");
         const crypto = await this.getCryptoByIdUseCase.run(cryptoId);
         if (crypto) {
-          const prices = await this.priceRepository.getPricesByCryptoId(
+          const lastPrice = await this.priceRepository.getLastPriceFromACrypto(
             cryptoId
           );
-          console.log(this.successMessage);
-          resolve(prices);
+          if (lastPrice) {
+            console.log(this.successMessage);
+            resolve(lastPrice);
+          }
         } else {
           reject(new Error(this.errorMessage));
         }

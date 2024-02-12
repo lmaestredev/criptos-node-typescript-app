@@ -15,6 +15,16 @@ export class PriceModel extends Model {
     });
     return prices;
   }
+
+  static async getLastPriceByCryptoId(
+    cryptoId: number
+  ): Promise<PriceModel | null> {
+    const lastPrice = await PriceModel.findOne({
+      where: { cryptoId: cryptoId },
+      order: [["createdAt", "DESC"]],
+    });
+    return lastPrice;
+  }
 }
 
 PriceModel.init(

@@ -16,7 +16,7 @@ export class GetPricesByCryptoIdUseCase {
         console.log(
           "--------------- Starting to getting crypto prices ---------------"
         );
-        console.log("--------------- Verifying crypto's name ---------------");
+        console.log("--------------- Verifying crypto's id ---------------");
         const crypto = await this.getCryptoByIdUseCase.run(cryptoId);
         if (crypto) {
           const prices = await this.priceRepository.getPricesByCryptoId(

@@ -10,7 +10,11 @@ const cryptoRouter = express.Router();
 
 cryptoRouter.post(
   "/create",
-  cryptoPostController.run.bind(cryptoPostController)
+  cryptoPostController.create.bind(cryptoPostController)
+);
+cryptoRouter.post(
+  "/create-massive",
+  cryptoPostController.createMassive.bind(cryptoPostController)
 );
 cryptoRouter.put(
   "/update/:name",
