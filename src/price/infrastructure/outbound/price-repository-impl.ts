@@ -8,6 +8,5 @@ export class PriceRepositoryImpl implements PriceRepository {
       price: price.price,
       criptoId: price.criptoId,
     });
-
   }
 }

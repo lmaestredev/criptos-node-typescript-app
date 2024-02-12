@@ -7,14 +7,16 @@ export class CreateCriptoUseCase {
   constructor(
     private readonly criptoRepository: CriptoRepository,
     private readonly createPriceUseCase: CreatePriceUseCase
-  ) { }
+  ) {}
 
   errorMessage = "Has ocurred an error creating cripto";
   successMessage = "Cripto created successfully";
   run(createCriptoDto: CreateCriptoDto): Promise<string> {
     return new Promise(async (resolve, reject) => {
       try {
-        console.log("--------------- Starting to create a new Cripto ---------------");
+        console.log(
+          "--------------- Starting to create a new Cripto ---------------"
+        );
         const cripto = new Cripto(
           createCriptoDto.name,
           createCriptoDto.currentPrice,
@@ -35,13 +37,14 @@ export class CreateCriptoUseCase {
           console.log(this.successMessage);
           resolve(this.successMessage);
         } else {
-          reject(new Error(`Already exists a cripto whit name: ${cripto.name}`));
+          reject(
+            new Error(`Already exists a cripto whit name: ${cripto.name}`)
+          );
         }
       } catch (error) {
         console.error(this.errorMessage);
         reject(new Error(this.errorMessage));
       }
-    })
-
+    });
   }
 }
