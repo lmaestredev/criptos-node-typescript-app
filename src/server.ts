@@ -1,11 +1,12 @@
-import { connect } from "./common/sequelize-connection";
-import bodyParser from "body-parser";
+// import bodyParser from "body-parser";
 import { config as dotEnvConfig } from "dotenv";
 import express, { Application } from "express";
-import { config } from "./common/config";
+
+import { config } from "./config/config";
+import { connect } from "./connections/sequelize-connection";
+import { cryptoRouter } from "./crypto/infrastructure/inbound/routers/crypto-router";
 import { healthRouter } from "./health/health-router";
-import { criptoRouter } from "./criptos/infrastructure/inbound/cripto-router";
-import { priceRouter } from "./prices/infrastructure/inbound/price-router";
+import { priceRouter } from "./price/infrastructure/inbound/routers/price-router";
 
 dotEnvConfig();
 const { port } = config.server;
@@ -27,11 +28,12 @@ export class Server {
     await this.dbConnection();
 
     // Middlewares
-    this.app.use(bodyParser.json());
+    // this.app.use(bodyParser.json());
+    this.app.use(express.json());
 
     // Rutas de mi aplicación
     this.app.use("/api/v1/flixxo-app/health", healthRouter);
-    this.app.use("/v1/flixxo-app/cripto", criptoRouter);
+    this.app.use("/api/v1/flixxo-app/crypto", cryptoRouter);
     this.app.use("/api/v1/flixxo-app/price", priceRouter);
 
     await this.app.listen(this.port, async () => {
