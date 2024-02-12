@@ -1,4 +1,4 @@
 export interface CreatePriceDto {
   price: number;
-  criptoId?: number;
+  cryptoId?: number;
 }

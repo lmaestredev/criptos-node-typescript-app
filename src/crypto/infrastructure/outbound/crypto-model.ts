@@ -3,22 +3,22 @@ import { DataTypes, Model } from "sequelize";
 import { sequelize } from "../../../connections/sequelize-connection";
 import { PriceModel } from "../../../price/infrastructure/outbound/price-model";
 
-export class CriptoModel extends Model {
+export class CryptoModel extends Model {
   declare name: string;
   declare currentPrice: number;
   declare previousPrice?: number;
   declare id?: number;
 
-  static async getByName(name: string): Promise<CriptoModel | null> {
-    const cripto = await this.findOne({
+  static async getByName(name: string): Promise<CryptoModel | null> {
+    const crypto = await this.findOne({
       where: { name: name },
     });
 
-    return cripto;
+    return crypto;
   }
 }
 
-CriptoModel.init(
+CryptoModel.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -39,16 +39,16 @@ CriptoModel.init(
   },
   {
     timestamps: false,
-    tableName: "criptos",
+    tableName: "cryptos",
     sequelize,
   }
 );
 
-CriptoModel.hasMany(PriceModel, {
-  foreignKey: "criptoId",
+CryptoModel.hasMany(PriceModel, {
+  foreignKey: "cryptoId",
   sourceKey: "id",
 });
 
-PriceModel.belongsTo(CriptoModel, {
-  foreignKey: "criptoId",
+PriceModel.belongsTo(CryptoModel, {
+  foreignKey: "cryptoId",
 });

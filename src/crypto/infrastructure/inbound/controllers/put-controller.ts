@@ -1,15 +1,15 @@
 import { Request, Response } from "express";
 
-import { UpdateCriptoUseCase } from "../../../application/update-usecase/update-cripto-usecase";
+import { UpdateCryptoUseCase } from "../../../application/update-usecase/update-crypto-usecase";
 
-export class CriptoPutController {
-  constructor(private readonly updateCriptoUseCase: UpdateCriptoUseCase) {}
+export class CryptoPutController {
+  constructor(private readonly updateCryptoUseCase: UpdateCryptoUseCase) {}
 
   async run(req: Request, res: Response) {
     const { name } = req.params;
     const { newPrice } = req.body;
     try {
-      const useCaseRes = await this.updateCriptoUseCase.run({ name, newPrice });
+      const useCaseRes = await this.updateCryptoUseCase.run({ name, newPrice });
       res.status(200).json({
         msg: useCaseRes,
       });

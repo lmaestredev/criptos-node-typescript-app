@@ -1,21 +1,21 @@
-import { GetCriptoByIdUseCase } from "../../cripto/application/get-usecase/get-cripto-by-id-usecase";
-import { CriptoRepositoryImpl } from "../../cripto/infrastructure/outbound/cripto-repository-impl";
-import { GetPricesByCriptoIdUseCase } from "../application/get-usecase/getPrices-by-cripto-usecase";
+import { GetCryptoByIdUseCase } from "../../crypto/application/get-usecase/get-crypto-by-id-usecase";
+import { CryptoRepositoryImpl } from "../../crypto/infrastructure/outbound/crypto-repository-impl";
+import { GetPricesByCryptoIdUseCase } from "../application/get-usecase/getPrices-by-crypto-usecase";
 import { PriceGetController } from "./inbound/controllers/get-controller";
 import { PriceRepositoryImpl } from "./outbound/price-repository-impl";
 
 //repositories
 const priceRepository = new PriceRepositoryImpl();
-const criptoRepository = new CriptoRepositoryImpl();
+const cryptoRepository = new CryptoRepositoryImpl();
 
 //usecases
-const getCriptoByIdUseCase = new GetCriptoByIdUseCase(criptoRepository);
-const getPricesByCriptoIdUseCase = new GetPricesByCriptoIdUseCase(
+const getCryptoByIdUseCase = new GetCryptoByIdUseCase(cryptoRepository);
+const getPricesByCryptoIdUseCase = new GetPricesByCryptoIdUseCase(
   priceRepository,
-  getCriptoByIdUseCase
+  getCryptoByIdUseCase
 );
 
 //controllers
 export const priceGetController = new PriceGetController(
-  getPricesByCriptoIdUseCase
+  getPricesByCryptoIdUseCase
 );

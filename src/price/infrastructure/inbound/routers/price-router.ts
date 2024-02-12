@@ -5,8 +5,8 @@ import { priceGetController } from "../../dependencies";
 const priceRouter = express.Router();
 
 priceRouter.get(
-  "/get-by-criptoId/:criptoId",
-  priceGetController.getByCriptoId.bind(priceGetController)
+  "/get-by-cryptoId/:cryptoId",
+  priceGetController.getByCryptoId.bind(priceGetController)
 );
 
 export { priceRouter };

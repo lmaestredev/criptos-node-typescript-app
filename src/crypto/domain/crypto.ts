@@ -1,4 +1,4 @@
-export class Cripto {
+export class Crypto {
   constructor(
     public name: string,
     public currentPrice: number,

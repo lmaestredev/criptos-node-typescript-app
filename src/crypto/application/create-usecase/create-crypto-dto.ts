@@ -1,4 +1,4 @@
-export interface CreateCriptoDto {
+export interface CreateCryptoDto {
   name: string;
   currentPrice: number;
 }

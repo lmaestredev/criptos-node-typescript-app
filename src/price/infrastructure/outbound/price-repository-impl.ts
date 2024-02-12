@@ -6,12 +6,12 @@ export class PriceRepositoryImpl implements PriceRepository {
   async create(price: Price): Promise<void> {
     await PriceModel.create({
       price: price.price,
-      criptoId: price.criptoId,
+      cryptoId: price.cryptoId,
     });
   }
 
-  async getPricesByCriptoId(id: number): Promise<Price[]> {
-    const prices = await PriceModel.getPricesByCriptoId(id);
+  async getPricesByCryptoId(id: number): Promise<Price[]> {
+    const prices = await PriceModel.getPricesByCryptoId(id);
     return prices;
   }
 }

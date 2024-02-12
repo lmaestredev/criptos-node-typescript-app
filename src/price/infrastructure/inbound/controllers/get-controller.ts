@@ -1,18 +1,18 @@
 import { Request, Response } from "express";
 
-import { GetPricesByCriptoIdUseCase } from "../../../application/get-usecase/getPrices-by-cripto-usecase";
+import { GetPricesByCryptoIdUseCase } from "../../../application/get-usecase/getPrices-by-crypto-usecase";
 
 export class PriceGetController {
   constructor(
-    private readonly getPricesByCriptoId: GetPricesByCriptoIdUseCase
+    private readonly getPricesByCryptoId: GetPricesByCryptoIdUseCase
   ) {}
 
-  async getByCriptoId(req: Request, res: Response) {
+  async getByCryptoId(req: Request, res: Response) {
     try {
-      const { criptoId } = req.params;
-      const useCaseRes = await this.getPricesByCriptoId.run(Number(criptoId));
+      const { cryptoId } = req.params;
+      const useCaseRes = await this.getPricesByCryptoId.run(Number(cryptoId));
       res.status(200).json({
-        cripto: criptoId,
+        crypto: cryptoId,
         prices: useCaseRes,
       });
     } catch (error) {

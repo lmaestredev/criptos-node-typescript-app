@@ -1,17 +1,17 @@
 import { DataTypes, Model } from "sequelize";
 
 import { sequelize } from "../../../connections/sequelize-connection";
-// import { Cripto } from "../../../criptos/infrastructure/outbound/cripto-model"
+// import { Crypto } from "../../../cryptos/infrastructure/outbound/crypto-model"
 
 export class PriceModel extends Model {
   declare id: number;
   declare price: number;
-  declare criptoId: number;
+  declare cryptoId: number;
   declare createdAt: Date;
 
-  static async getPricesByCriptoId(criptoId: number): Promise<PriceModel[]> {
+  static async getPricesByCryptoId(cryptoId: number): Promise<PriceModel[]> {
     const prices = await PriceModel.findAll({
-      where: { criptoId: criptoId },
+      where: { cryptoId: cryptoId },
     });
     return prices;
   }

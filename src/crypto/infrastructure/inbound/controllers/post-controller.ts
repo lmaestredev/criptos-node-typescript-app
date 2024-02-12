@@ -1,13 +1,13 @@
 import { Request, Response } from "express";
 
-import { CreateCriptoUseCase } from "../../../application/create-usecase/create-cripto-usecase";
+import { CreateCryptoUseCase } from "../../../application/create-usecase/create-crypto-usecase";
 
-export class CriptoPostController {
-  constructor(private readonly createCriptoUseCase: CreateCriptoUseCase) {}
+export class CryptoPostController {
+  constructor(private readonly createCryptoUseCase: CreateCryptoUseCase) {}
   async run(req: Request, res: Response) {
     const { name, currentPrice } = req.body;
     try {
-      const useCaseRes = await this.createCriptoUseCase.run({
+      const useCaseRes = await this.createCryptoUseCase.run({
         name,
         currentPrice,
       });

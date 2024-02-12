@@ -9,7 +9,7 @@ export class CreatePriceUseCase {
     try {
       const price = new Price(
         createPriceDto.price,
-        createPriceDto.criptoId,
+        createPriceDto.cryptoId,
         undefined,
         undefined
       );
