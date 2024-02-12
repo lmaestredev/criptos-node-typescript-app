@@ -14,7 +14,7 @@ export class CriptoPutController {
         msg: useCaseRes,
       });
     } catch (error) {
-        console.log((error as Error).message || "An unknown error occurred.");
+      console.log((error as Error).message || "An unknown error occurred.");
       res.status(404).json({
         error: (error as Error).message || "An unknown error occurred.",
       });

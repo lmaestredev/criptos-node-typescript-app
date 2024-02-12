@@ -9,7 +9,7 @@ export class UpdateCriptoUseCase {
     private readonly createPriceUseCase: CreatePriceUseCase
   ) {}
 
-  errorMessage = "Doesn't exists a Cripto with name: "
+  errorMessage = "Doesn't exists a Cripto with name: ";
   successMessage = "Cripto updated successfully";
   run(criptoDto: UpdateCriptoDto): Promise<string> {
     return new Promise(async (resolve, reject) => {
@@ -43,9 +43,7 @@ export class UpdateCriptoUseCase {
           console.log(this.successMessage);
           resolve(this.successMessage);
         } else {
-          reject(
-            new Error(this.errorMessage + criptoDto.name)
-          );
+          reject(new Error(this.errorMessage + criptoDto.name));
         }
       } catch (error) {
         console.error(this.errorMessage + criptoDto.name);
