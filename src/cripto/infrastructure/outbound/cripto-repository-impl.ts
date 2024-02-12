@@ -43,4 +43,19 @@ export class CriptoRepositoryImpl implements CriptoRepository {
       return null;
     }
   }
+
+  async getAll(): Promise<Cripto[]> {
+    const criptoModels = await CriptoModel.findAll();
+
+    const criptos: Cripto[] = criptoModels.map((model) => {
+      return new Cripto(
+        model.name,
+        model.currentPrice,
+        model.previousPrice,
+        model.id
+      );
+    });
+
+    return criptos;
+  }
 }

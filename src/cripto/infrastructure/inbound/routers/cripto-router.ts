@@ -1,6 +1,10 @@
 import express from "express";
 
-import { criptoPostController, criptoPutController } from "../../dependencies";
+import {
+  criptoGetController,
+  criptoPostController,
+  criptoPutController,
+} from "../../dependencies";
 
 const criptoRouter = express.Router();
 
@@ -12,5 +16,6 @@ criptoRouter.put(
   "/update/:name",
   criptoPutController.run.bind(criptoPutController)
 );
+criptoRouter.get("/get-all", criptoGetController.getAll.bind(criptoGetController));
 
 export { criptoRouter };
