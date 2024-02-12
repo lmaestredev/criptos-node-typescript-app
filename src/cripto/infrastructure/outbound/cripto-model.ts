@@ -8,6 +8,14 @@ export class CriptoModel extends Model {
   declare currentPrice: number;
   declare previousPrice?: number;
   declare id?: number;
+
+  static async getByName(name: string): Promise<CriptoModel | null> {
+    const cripto = await this.findOne({
+      where: { name: name },
+    });
+
+    return cripto;
+  }
 }
 
 CriptoModel.init(
