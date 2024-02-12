@@ -1,10 +1,23 @@
 import { Price } from "../domain/price";
 import { PriceRepository } from "../domain/price-repository";
+import { CreatePriceDto } from "./create-price-dto";
 
 export class CreatePriceUseCase {
   constructor(private readonly priceRepository: PriceRepository) {}
 
-  async run(price: Price): Promise<void> {
-    await this.priceRepository.create(price);
+  async run(createPriceDto: CreatePriceDto): Promise<void> {
+    try {
+      const price = new Price(
+        createPriceDto.price,
+        createPriceDto.criptoId,
+        undefined,
+        undefined
+      );
+      console.log(JSON.stringify(price));
+      await this.priceRepository.create(price);
+    } catch (error) {
+      console.error("Has ocurred an error creating Price");
+      throw new Error("Has ocurred an error creating Price");
+    }
   }
 }

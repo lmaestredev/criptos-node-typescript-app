@@ -14,10 +14,7 @@ export class CreateCriptoUseCase {
         undefined
       );
       console.log(JSON.stringify(cripto));
-      const created = await this.criptoRepository.create(cripto);
-      console.log(JSON.stringify(created));
-
-      // return new Cripto(created.name, created)
+      await this.criptoRepository.create(cripto);
     } catch (error) {
       console.error("Has ocurred an error creating cripto");
       throw new Error("Has ocurred an error creating cripto");
