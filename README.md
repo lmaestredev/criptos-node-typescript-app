@@ -24,7 +24,12 @@ npm install
 ## Building
 
 ```bash
-npm run start:dev
+npm run build
+```
+## Running
+
+```bash
+npm run start
 ```
 
 ## Testing
