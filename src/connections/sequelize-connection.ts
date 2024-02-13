@@ -10,7 +10,7 @@ import "../price/infrastructure/outbound/price-model";
 
 export const connect = async () => {
   try {
-    await sequelize.sync({ force: true });
+    await sequelize.sync({ force: false });
   } catch (error) {
     console.error("Unable to connect to the database");
   }

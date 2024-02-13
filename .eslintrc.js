@@ -19,4 +19,12 @@ module.exports = {
     jest: true,
   },
   ignorePatterns: ['.eslintrc.js', "commitlint.config.js", "jest.config.js"],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "@typescript-eslint/no-namespace": "off"
+      }
+    }
+  ]
 };
