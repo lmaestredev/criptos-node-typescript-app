@@ -1,4 +1,4 @@
-<h1 align="center">Backend Developer Challenge</h1>
+<h1 align="center">Criptos CRUD app</h1>
 
 <p align="center">
   A continuacion te explicaré como funciona el proyecto
@@ -53,7 +53,7 @@ Fix lint issues automatically
 ```bash
 npm run lint:fix
 ```
-# flixxo-challenge
+# Some questions
 
 ### ¿Qué es SQL Injection y cómo puede evitarse?
 
